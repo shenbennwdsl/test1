@@ -289,7 +289,7 @@ async function getUnreviewedComments() {
   const { data: excludeIds } = await supabase
   .from('labeled_results')
   .select('sample_id')
-  .eq('reviewer', 'test');
+  .eq('reviewer', currentUser);
   const { data, error } = await supabase
     .from('pairwise_comments')
     .select(`
