@@ -315,7 +315,7 @@ async function getLabeledCount() {
   const { data, error } = await supabase
     .from('labeled_results')
     .select('sample_id')
-    .eq('reviewer', 'test');
+    .eq('reviewer', currentUser);
 
   if (error) {
     console.error('Error fetching labeled count:', error);
