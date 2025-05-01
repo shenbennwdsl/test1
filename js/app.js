@@ -10,7 +10,7 @@ const ITEMS_PER_PAGE = 10;
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const currentUser = document.getElementById("currentUser").textContent || 'anonymous'; // 如果没有用户名则使用 'anonymous'
-
+const total_num = 100;
 // 全局变量
 let currentPage = 1;
 let allSamples = [];
@@ -71,7 +71,7 @@ async function loadData() {
 
         let labeled_num = await getLabeledCount();
         // 计算百分比
-        let percentage = Math.ceil((labeled_num / 100) * 100);
+        let percentage = Math.ceil((labeled_num / total_num) * 100);
         // 确保百分比在0-100之间
         percentage = Math.max(0, Math.min(100, percentage));
         updateProgressBar(percentage);
@@ -267,7 +267,7 @@ async function submitLabels() {
         const labeled_num = await getLabeledCount();
         console.info('已标注数量是：',  labeled_num);
         // 计算百分比
-        let percentage = Math.ceil((labeled_num / 100) * 100);
+        let percentage = Math.ceil((labeled_num / total_num) * 100);
         // 确保百分比在0-100之间
         percentage = Math.max(0, Math.min(100, percentage));
         updateProgressBar(percentage);
