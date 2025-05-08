@@ -263,7 +263,8 @@ async function submitLabels() {
             .from('labeled_results')
             .insert(samplesToSubmit);
         if (error) throw error;
-
+        // 提交后清空selectedLabels
+        selectedLabels = {}; // 如果selectedLabels是state，使用对应的setState方法
         const labeled_num = await getLabeledCount();
         console.info('已标注数量是：',  labeled_num);
         // 计算百分比
