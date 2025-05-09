@@ -287,25 +287,26 @@ async function submitLabels() {
 async function getUnreviewedComments() {
 
   // 第一步：获取要排除的ID列表
-  const { data: excludeIds } = await supabase
-  .from('labeled_results')
-  .select('sample_id')
-  .eq('reviewer', currentUser);
+  // const { data: excludeIds } = await supabase
+  // .from('labeled_results')
+  // .select('sample_id')
+  // .eq('reviewer', currentUser);
+  // const { data, error } = await supabase
+  //   .from('pairwise_comments')
+  //   .select(`
+  //     id,
+  //     sku,
+  //     sku_title,
+  //     content1,
+  //     content2,
+  //     pics1,
+  //     pics2
+  //   `)
+  //   .not('id', 'in',`(${excludeIds.map(x => x.sample_id).join(',')})`)
+  //   .order('id', {ascending: true})
+  //   .limit(10);
   const { data, error } = await supabase
-    .from('pairwise_comments')
-    .select(`
-      id,
-      sku,
-      sku_title,
-      content1,
-      content2,
-      pics1,
-      pics2
-    `)
-    .not('id', 'in',`(${excludeIds.map(x => x.sample_id).join(',')})`)
-    .order('id', {ascending: true})
-    .limit(10);
-
+    .rpc('get_unreviewed_comments', { user_id: currentUser });
   if (error) {
     console.error('Error fetching unreviewed comments:', error)
     return null
