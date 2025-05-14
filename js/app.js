@@ -10,7 +10,7 @@ const ITEMS_PER_PAGE = 10;
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const currentUser = document.getElementById("currentUser").textContent || 'anonymous'; // 如果没有用户名则使用 'anonymous'
-const total_num = 200;
+const total_num = 10000;
 // 全局变量
 let currentPage = 1;
 let allSamples = [];
