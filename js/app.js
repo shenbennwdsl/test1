@@ -104,6 +104,7 @@ function renderTable(samples) {
         <tr>
             <td>${sample.id}</td>
             <td class="product-title"><a href="${jdLink}" target="_blank">${sample.sku_title || '无标题'}</a></td>
+            <td>${sample.selected_comment}</td>
 
             <!-- 评论1列 -->
             <td>
