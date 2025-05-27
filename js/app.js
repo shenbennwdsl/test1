@@ -3,8 +3,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
 
 // 配置 Supabase
-const SUPABASE_URL = 'https://pbhvfhgoafwkuvwmqvec.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBiaHZmaGdvYWZ3a3V2d21xdmVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc5ODk2NjIsImV4cCI6MjA2MzU2NTY2Mn0.d3cfJeTDDhLDCZJmM9q6tbfVrl68IFNYvaetfUbkw5E';
+const SUPABASE_URL = 'https://efdllwqcoodjgtxcatoe.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVmZGxsd3Fjb29kamd0eGNhdG9lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzMjc5NDksImV4cCI6MjA2MzkwMzk0OX0.pn5coOs5D2gGd3I6BMvIzJQshq_Zz-h8scHY4DQtXgM';
 const ITEMS_PER_PAGE = 10;
 // 初始化 Supabase 客户端
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
